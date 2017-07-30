@@ -16,7 +16,7 @@ class RedisStorage(BaseStorage):
         self.prefix = prefix
 
     def key_name(self, key):
-        return '{}:{}'.format(self.prefix, key)
+        return '{0}:{1}'.format(self.prefix, key)
 
     def get(self, key, default=None):
         value = self.redis.get(self.key_name(key))
